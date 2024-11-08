@@ -1,0 +1,25 @@
+POST http://127.0.0.1:3000/auth/register
+Content-Type: application/json
+
+{
+    "name":"prueba",
+    "email":"casa@gmail.com",
+    "password":"12345678"
+}
+
+
+###login sin conexion a BOD
+
+POST http://127.0.0.1:3000/auth/login
+Content-Type: application/json
+
+{
+    "name":"prueba2",
+    "email":"casa@gmail.com",
+    "password":"12345678"
+}
+
+
+### users
+GET http://127.0.0.1:3000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlkIjoxLCJpYXQiOjE3MzAxNjk3NjMsImV4cCI6MTczMDE3MzM2M30.s8ct01e6NIxjIo5Dw4Ej7oAore4bCpydiyUSrLPqMb4
