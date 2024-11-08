@@ -1,5 +1,5 @@
-import { DataSource } from "typeorm"
 import { ConfigService } from "src/config/config.service";
+import { DataSource } from "typeorm"
 
 export const databaseProvider=[
     {
@@ -13,7 +13,9 @@ export const databaseProvider=[
                 username: config.get('USERNAME')||'root',
                 password: config.get('PASSWORD')|| 'prueba',
                 database: config.get('DATABASE'),
-               
+                entities: [
+                    __dirname + '/../**/*.entity{.ts,.js}',
+                ],
             });
 
             return dataSource.initialize();

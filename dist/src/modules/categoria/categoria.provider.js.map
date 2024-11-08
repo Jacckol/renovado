@@ -1,0 +1,1 @@
+{"version":3,"file":"categoria.provider.js","sourceRoot":"","sources":["../../../../src/modules/categoria/categoria.provider.ts"],"names":[],"mappings":";;;AACA,kEAAwD;AAG3C,QAAA,kBAAkB,GAAC;IAC5B;QACI,OAAO,EAAC,sBAAsB;QAC9B,UAAU,EAAE,CAAC,UAAqB,EAAC,EAAE,CAAA,UAAU,CAAC,aAAa,CAAC,4BAAS,CAAC;QACxE,MAAM,EAAC,CAAC,8BAA8B,CAAC;KAC1C;CACJ,CAAA"}
