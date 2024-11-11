@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Categoria = void 0;
+const producto_entity_1 = require("../../producto/entities/producto.entity");
 const typeorm_1 = require("typeorm");
 let Categoria = class Categoria {
 };
@@ -26,6 +27,10 @@ __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
 ], Categoria.prototype, "detalle", void 0);
+__decorate([
+    (0, typeorm_1.OneToMany)(() => producto_entity_1.Producto, (prod) => prod.categoria),
+    __metadata("design:type", Array)
+], Categoria.prototype, "producto", void 0);
 exports.Categoria = Categoria = __decorate([
     (0, typeorm_1.Entity)()
 ], Categoria);

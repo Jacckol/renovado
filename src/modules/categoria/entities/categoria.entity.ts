@@ -1,4 +1,6 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Producto } from "../../producto/entities/producto.entity";
+
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class Categoria {
@@ -11,6 +13,7 @@ export class Categoria {
     @Column()  //con esto permitimos que el campo sea nulo
     detalle:string;
 
-
+    @OneToMany(()=>Producto, (prod)=>prod.categoria)
+    producto:Producto[]
     
 }

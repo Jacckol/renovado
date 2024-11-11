@@ -8,21 +8,34 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
-const app_controller_1 = require("./app.controller");
-const app_service_1 = require("./app.service");
-const auth_module_1 = require("./modules/auth/auth.module");
-const users_module_1 = require("./modules/users/users.module");
-const database_module_1 = require("./database/database.module");
-const config_module_1 = require("./config/config.module");
-const categoria_module_1 = require("./modules/categoria/categoria.module");
+const typeorm_1 = require("@nestjs/typeorm");
+const persona_module_1 = require("./modules/persona/persona.module");
+const producto_module_1 = require("./modules/producto/producto.module");
+const role_module_1 = require("./modules/role/role.module");
+const cliente_module_1 = require("./modules/cliente/cliente.module");
+const pedido_module_1 = require("./modules/pedido/pedido.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
-        imports: [auth_module_1.AuthModule, users_module_1.UsersModule, database_module_1.DatabaseModule, config_module_1.ConfigModule, categoria_module_1.CategoriaModule],
-        controllers: [app_controller_1.AppController],
-        providers: [app_service_1.AppService],
+        imports: [
+            typeorm_1.TypeOrmModule.forRoot({
+                type: 'postgres',
+                host: 'localhost',
+                port: 5432,
+                username: 'postgres',
+                password: '1234',
+                database: 'back',
+                entities: [],
+                synchronize: true,
+            }),
+            persona_module_1.PersonaModule,
+            producto_module_1.ProductoModule,
+            role_module_1.RoleModule,
+            cliente_module_1.ClienteModule,
+            pedido_module_1.PedidoModule,
+        ]
     })
 ], AppModule);
 //# sourceMappingURL=app.module.js.map
